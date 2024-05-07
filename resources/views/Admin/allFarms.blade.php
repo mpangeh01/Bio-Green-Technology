@@ -83,11 +83,11 @@
                                             <td>{{ $farm->user->phone}}</td>
                                             <td>
                                                 <div class="d-flex order-actions">
-                                                    <a href=""
+                                                    <a href="{{ route('edit.farm', ['id' => $farm->id]) }}"
                                                         class=""><i class='bx bxs-edit'></i></a>
-                                                    <a href=""
+                                                    <a href="{{ route('delete.farm', ['id' => $farm->id]) }}"
                                                         class="ms-3"
-                                                        onclick="return confirm('Are You Sure You Want To Delete This Farm?');"
+                                                        onclick="return confirm('Are You Sure You Want To Delete This Fare?');"
                                                         style="color: red"><i class='bx bxs-trash'></i></a>
                                                 </div>
                                             </td>

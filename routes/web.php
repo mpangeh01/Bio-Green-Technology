@@ -22,7 +22,7 @@ Auth::routes();
 
 Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])
     ->name('home')
-    ->middleware('checkUserRole:Admin,Accountant,Dispatcher');
+    ->middleware('checkUserRole:Admin,Farmer,Dispatcher');
 
 
 Route::middleware(['auth'])->group(function () {
@@ -32,11 +32,10 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/add-farm', [App\Http\Controllers\FarmController::class, 'create'])->name('add.farm');
     Route::post('/store-farm', [App\Http\Controllers\FarmController::class, 'store'])->name('store.farm');
     Route::get('/all-farms', [App\Http\Controllers\FarmController::class, 'index'])->name('all.farms');
+    Route::get('/edit-farm/{id}', [App\Http\Controllers\FarmController::class, 'edit'])->name('edit.farm');
 
 
     //LOCATION MANAGEMENT
-    Route::get('/all-locations', [App\Http\Controllers\LocationController::class, 'index'])->name('all.locations');
-    Route::get('/edit-location/{id}', [App\Http\Controllers\LocationController::class, 'edit'])->name('edit.location');
     Route::post('/update-location/{id}', [App\Http\Controllers\LocationController::class, 'update'])->name('update.location');
     Route::get('/delete-location/{id}', [App\Http\Controllers\LocationController::class, 'destroy'])->name('delete.location');
 

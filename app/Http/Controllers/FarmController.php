@@ -48,4 +48,13 @@ class FarmController extends Controller
 
         return view('Admin.allFarms', compact('farms','user'));
     }
+
+    public function edit($id)
+    {
+        // Find the farm by its ID
+        $farm = Farm::findOrFail($id);
+
+        // Return the farm data to the edit view
+        return view('Admin.editFarm', compact('farm'));
+    }
 }
