@@ -7,7 +7,7 @@
 
 <head>
     @include('includes.css')
-    <title>Abaleya – Admin Dashboard</title>
+    <title>Bio Green Tech – Admin Dashboard</title>
 </head>
 
 <body>
@@ -42,7 +42,7 @@
 
                                         <div class="container-fluid text-center">
                                             <a class="navbar-brand" href="#">
-                                                <img src="assets/images/abaleya-vertical.png" style="padding-left: 50px" width="140" alt="" class="d-inline-block align-top ">
+                                                <img src="assets/images/logo.png" style="padding-left: 50px" width="140" alt="" class="d-inline-block align-top ">
                                             </a>
                                             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent1" aria-controls="navbarSupportedContent1" aria-expanded="false" aria-label="Toggle navigation">
                                                 <span class="navbar-toggler-icon"></span>

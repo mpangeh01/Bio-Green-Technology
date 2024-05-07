@@ -40,11 +40,25 @@
 
                                             @csrf
                                             <div class="col-sm-12">
-                                                <label for="inputFirstName" class="form-label">Full Name</label>
+                                                <label for="inputFirstName" class="form-label">First Name</label>
                                                 <input id="name" type="text"
-                                                    class="form-control @error('name') is-invalid @enderror"
-                                                    name="name" value="{{ old('name') }}" required
-                                                    autocomplete="name" autofocus>
+                                                    class="form-control @error('f_name') is-invalid @enderror"
+                                                    name="f_name" value="{{ old('f_name') }}" required
+                                                    autocomplete="f_name" autofocus>
+
+                                                @error('name')
+                                                    <span class="invalid-feedback" role="alert">
+                                                        <strong>{{ $message }}</strong>
+                                                    </span>
+                                                @enderror
+                                            </div>
+
+                                            <div class="col-sm-12">
+                                                <label for="inputFirstName" class="form-label">Last Name</label>
+                                                <input id="name" type="text"
+                                                    class="form-control @error('l_name') is-invalid @enderror"
+                                                    name="l_name" value="{{ old('l_name') }}" required
+                                                    autocomplete="l_name" autofocus>
 
                                                 @error('name')
                                                     <span class="invalid-feedback" role="alert">

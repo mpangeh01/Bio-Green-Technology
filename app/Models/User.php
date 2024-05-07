@@ -18,14 +18,12 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
+        'f_name',
+        'l_name',
         'email',
         'phone',
         'password',
-        'fcm_token',
         'role',
-        'is_verified'
-
     ];
 
     /**
@@ -47,30 +45,5 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
-
-    public function bookings(){
-
-        return $this->hasMany(Booking::class);
-    }
-
-    public function listings(){
-
-        return $this->hasMany(Listing::class);
-    }
-
-    public function driverCredentials(){
-
-        return $this->hasOne(DriverCredentials::class);
-    }
-
-    public function cars()
-    {
-        return $this->hasMany(Car::class);
-    }
-
-    public function notifications()
-    {
-        return $this->hasMany(Notification::class);
-    }
 
 }
