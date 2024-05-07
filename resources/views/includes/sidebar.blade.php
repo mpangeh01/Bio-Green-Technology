@@ -18,7 +18,7 @@
     <ul class="metismenu" id="menu">
 
         <li>
-            <a href="javascript:;">
+            <a href="{{ route('home') }}">
                 <div class="parent-icon"><i class='bx bx-home'></i>
                 </div>
                 <div class="menu-title">Dashboard</div>
@@ -33,9 +33,9 @@
                 <div class="menu-title">Farm Management</div>
             </a>
             <ul>
-                <li> <a href=""><i class="bx bx-right-arrow-alt"></i>Add Farm</a>
+                <li> <a href="{{ route('add.farm') }}"><i class="bx bx-right-arrow-alt"></i>Add Farm</a>
                 </li>
-                <li> <a href=""><i class="bx bx-right-arrow-alt"></i>View Farms</a>
+                <li> <a href="{{ route('all.farms') }}"><i class="bx bx-right-arrow-alt"></i>All Farms</a>
                 </li>
             </ul>
         </li>
