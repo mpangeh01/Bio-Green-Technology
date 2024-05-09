@@ -3,7 +3,6 @@
 
 
 <head>
-    <base href="/public">
     @include('includes.css')
     <title>Bio Green Tech – Admin Dashboard</title>
 </head>
@@ -21,13 +20,13 @@
         <div class="page-wrapper">
             <div class="page-content">
                 <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
-                    <div class="breadcrumb-title pe-3">Farm Management</div>
+                    <div class="breadcrumb-title pe-3">Pond Management</div>
                     <div class="ps-3">
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb mb-0 p-0">
                                 <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
                                 </li>
-                                <li class="breadcrumb-item active" aria-current="page">Add New Farm</li>
+                                <li class="breadcrumb-item active" aria-current="page">Add Pond Farm</li>
                             </ol>
                         </nav>
                     </div>
@@ -54,42 +53,48 @@
 
                 <div class="card">
                     <div class="card-body p-4">
-                        <h5 class="card-title">Add New Farm</h5>
+                        <h5 class="card-title">Add Pond</h5>
                         <hr />
                         <div class="form-body mt-4">
                             <div class="row">
                                 <div class="col-lg-8">
                                     <div class="border border-3 p-4 rounded">
 
-                                        <form action="{{ route('update.farm', $farm->id) }}" method="POST"
+                                        <form action="{{ route('store.pond') }}" method="POST"
                                             enctype="multipart/form-data">
 
                                             @csrf
                                             <div class="mb-3">
-                                                <label class="form-label">User</label>
-                                                <input type="text" class="form-control" value="{{ $farm->user->f_name }} {{ $farm->user->l_name }}" readonly>
+                                                <label class="form-label">Farm</label>
+                                                <select name="farm" class="form-select form-select-sm mb-3"
+                                                    aria-label=".form-select-sm example" id="origin">
+                                                    @foreach ($farms as $farm)
+                                                        <option value="{{ $farm->id }}">{{ $farm->name }}
+                                                        </option>
+                                                    @endforeach
+                                                </select>
                                             </div>
 
                                             <div class="mb-3">
                                                 <label class="form-label">Name</label>
-                                                <input type="text" class="form-control" name="name" value="{{ $farm->name }}" required>
+                                                <input type="text" class="form-control" name="name"
+                                                    placeholder="Shield pond " required>
                                             </div>
 
                                             <div class="mb-3">
-                                                <label class="form-label">Address</label>
-                                                <input type="text" class="form-control" name="address" value="{{ $farm->address }}" required>
+                                                <label class="form-label">location</label>
+                                                <input type="text" class="form-control" name="location"
+                                                    placeholder="Kamwala" required>
                                             </div>
 
-                                            <div class="mb-3">
-                                                <label class="form-label">Region</label>
-                                                <input type="text" class="form-control" name="region" value="{{ $farm->region }}" required>
-                                            </div>
+
+
 
                                             <div class="mb-3">
-                                                <button type="submit" class="btn btn-outline-primary" style="width: 100%">Update Farm</button>
+                                                <button type="submit" class="btn btn-outline-primary"
+                                                    style="width: 100%">Add Pond</button>
                                             </div>
                                         </form>
-
                                     </div>
                                 </div>
 

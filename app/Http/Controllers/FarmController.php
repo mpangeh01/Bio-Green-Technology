@@ -36,7 +36,6 @@ class FarmController extends Controller
         $farm->region = $validatedData['region'];
         $farm->save();
 
-        // Redirect back with success message or do something else (e.g., return JSON response)
         return redirect()->back()->with('status', 'Farm added successfully!');
     }
 
@@ -53,8 +52,41 @@ class FarmController extends Controller
     {
         // Find the farm by its ID
         $farm = Farm::findOrFail($id);
+        $user = Auth::user();
 
         // Return the farm data to the edit view
-        return view('Admin.editFarm', compact('farm'));
+        return view('Admin.editFarm', compact('farm', 'user'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        // Validate the incoming request data
+        $validatedData = $request->validate([
+            'name' => 'required|string',
+            'address' => 'required|string',
+            'region' => 'required|string',
+        ]);
+
+        // Find the farm by its ID
+        $farm = Farm::findOrFail($id);
+
+        // Update the farm with the validated data
+        $farm->name = $validatedData['name'];
+        $farm->address = $validatedData['address'];
+        $farm->region = $validatedData['region'];
+        $farm->save();
+
+        return redirect()->back()->with('status', 'Farm updated successfully!');
+    }
+
+    public function destroy($id)
+    {
+        // Find the farm by its ID
+        $farm = Farm::findOrFail($id);
+
+        // Delete the farm
+        $farm->delete();
+
+        return redirect()->back()->with('status', 'Farm deleted successfully!');
     }
 }

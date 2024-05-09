@@ -33,11 +33,16 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/store-farm', [App\Http\Controllers\FarmController::class, 'store'])->name('store.farm');
     Route::get('/all-farms', [App\Http\Controllers\FarmController::class, 'index'])->name('all.farms');
     Route::get('/edit-farm/{id}', [App\Http\Controllers\FarmController::class, 'edit'])->name('edit.farm');
+    Route::post('/update-farm/{id}', [App\Http\Controllers\FarmController::class, 'update'])->name('update.farm');
+    Route::get('/delete-farm/{id}', [App\Http\Controllers\FarmController::class, 'destroy'])->name('delete.farm');
 
-
-    //LOCATION MANAGEMENT
-    Route::post('/update-location/{id}', [App\Http\Controllers\LocationController::class, 'update'])->name('update.location');
-    Route::get('/delete-location/{id}', [App\Http\Controllers\LocationController::class, 'destroy'])->name('delete.location');
+    //POND MANAGEMNT
+    Route::get('/add-pond', [App\Http\Controllers\PondController::class, 'create'])->name('add.pond');
+    Route::post('/store-pond', [App\Http\Controllers\PondController::class, 'store'])->name('store.pond');
+    Route::get('/all-ponds', [App\Http\Controllers\PondController::class, 'index'])->name('all.ponds');
+    Route::get('/edit-pond/{id}', [App\Http\Controllers\PondController::class, 'edit'])->name('edit.pond');
+    Route::post('/update-pond/{id}', [App\Http\Controllers\PondController::class, 'update'])->name('update.pond');
+    Route::get('/delete-pond/{id}', [App\Http\Controllers\PondController::class, 'destroy'])->name('delete.pond');
 
 
 });

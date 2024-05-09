@@ -50,7 +50,7 @@
                                 <div class="d-flex align-items-center">
                                     <div>
                                         <p class="mb-0 text-white">Total Farmers</p>
-                                        <h5 class="mb-0 text-white">$52,945</h5>
+                                        <h5 class="mb-0 text-white">945</h5>
                                     </div>
                                     <div class="ms-auto text-white"><i class='bx bx-wallet font-30'></i>
                                     </div>
@@ -110,23 +110,22 @@
                                 <thead>
                                     <tr>
                                         <th>#</th>
-                                        <th>Transaction ID</th>
-                                        <th>Listing Owner</th>
-                                        <th>Amount</th>
-                                        <th>Status</th>
-                                        <th>Date</th>
+                                        <th>Farmer</th>
+                                        <th>Farm Name</th>
+                                        <th>Percentage Increase</th>
+
                                     </tr>
                                 </thead>
                                 <tbody id="transactionTableBody"></tbody>
                                 <tfoot>
                                     <tr>
-                                        <th>#</th>
-                                        <th>Transaction ID</th>
-                                        <th>Listing Owner</th>
-                                        <th>Amount</th>
-                                        <th>Status</th>
-                                        <th>Date</th>
-                                    </tr>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Farmer</th>
+                                            <th>Farm Name</th>
+                                            <th>Percentage Increase</th>
+
+                                        </tr>
                                 </tfoot>
                             </table>
                         </div>

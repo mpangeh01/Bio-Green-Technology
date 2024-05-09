@@ -47,26 +47,13 @@
                 <div class="menu-title">Pond Management</div>
             </a>
             <ul>
-                <li> <a href=""><i class="bx bx-right-arrow-alt"></i>Add Pond</a>
+                <li> <a href="{{route('add.pond')}}"><i class="bx bx-right-arrow-alt"></i>Add Pond</a>
                 </li>
-                <li> <a href=""><i class="bx bx-right-arrow-alt"></i>View Ponds</a>
+                <li> <a href="{{ route('all.ponds') }}"><i class="bx bx-right-arrow-alt"></i>View Ponds</a>
                 </li>
             </ul>
         </li>
 
-        <li>
-            <a class="has-arrow" href="javascript:;">
-                <div class="parent-icon"><i class='bx bx-map-pin'></i>
-                </div>
-                <div class="menu-title">Pond Management</div>
-            </a>
-            <ul>
-                <li> <a href="#"><i class="bx bx-right-arrow-alt"></i>Add Pond</a>
-                </li>
-                <li> <a href="#"><i class="bx bx-right-arrow-alt"></i>View Ponds</a>
-                </li>
-            </ul>
-        </li>
 
         <li>
             <a class="has-arrow" href="javascript:;">
@@ -86,7 +73,7 @@
 
 
         <li>
-            <a href="">
+            <a href="#">
                 <div class="parent-icon"><i class='bx bx-user-pin'></i>
                 </div>
                 <div class="menu-title">User Management</div>
