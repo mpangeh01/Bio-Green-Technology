@@ -42,7 +42,7 @@ class FarmController extends Controller
     public function index()
     {
         // Retrieve all farms
-        $farms = Farm::all();
+        $farms = Farm::orderBy('created_at', 'desc')->get();
         $user = Auth::user();
 
         return view('Admin.allFarms', compact('farms','user'));

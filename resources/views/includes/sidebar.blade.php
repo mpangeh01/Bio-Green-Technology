@@ -35,7 +35,7 @@
             <ul>
                 <li> <a href="{{ route('add.farm') }}"><i class="bx bx-right-arrow-alt"></i>Add Farm</a>
                 </li>
-                <li> <a href="{{ route('all.farms') }}"><i class="bx bx-right-arrow-alt"></i>All Farms</a>
+                <li> <a href="{{ route('all.farms') }}"><i class="bx bx-right-arrow-alt"></i>View Farms</a>
                 </li>
             </ul>
         </li>
@@ -73,7 +73,7 @@
 
 
         <li>
-            <a href="#">
+            <a href="{{route('all.users')}}">
                 <div class="parent-icon"><i class='bx bx-user-pin'></i>
                 </div>
                 <div class="menu-title">User Management</div>

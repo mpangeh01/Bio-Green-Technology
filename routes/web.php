@@ -44,5 +44,7 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/update-pond/{id}', [App\Http\Controllers\PondController::class, 'update'])->name('update.pond');
     Route::get('/delete-pond/{id}', [App\Http\Controllers\PondController::class, 'destroy'])->name('delete.pond');
 
+    //POND MANAGEMNT
+    Route::get('/all-users', [App\Http\Controllers\UserController::class, 'index'])->name('all.users');
 
 });

@@ -41,7 +41,7 @@ class PondController extends Controller
     public function index()
     {
         // Retrieve all farms
-        $ponds = Pond::all();
+        $ponds = Pond::orderBy('created_at', 'desc')->get();
         $user = Auth::user();
 
         return view('Admin.allPonds', compact('ponds', 'user'));

@@ -56,7 +56,7 @@
                     <div class="card-body">
                         <div class="table-responsive">
                             <div style="display: flex; justify-content: flex-end; margin-top: 10px;">
-                                <a href="{{ route('add.user') }}" class="btn btn-success">Add User</a>
+                                <a href="#" class="btn btn-success">Add User</a>
                             </div>
 
 
@@ -67,7 +67,7 @@
                                         <th>Name</th>
                                         <th>Phone</th>
                                         <th>Role</th>
-                                        <th>Status</th>
+                                        <th>Email</th>
                                         <th>Date Joined</th>
                                         <th>Actions</th>
 
@@ -81,20 +81,16 @@
                                     @foreach ($users as $user)
                                         <tr>
                                             <td>{{ $count }}</td>
-                                            <td>{{ $user->name }}</td>
+                                            <td>{{ $user->f_name }} &nbsp;&nbsp;{{ $user->l_name }}</td>
                                             <td>{{ $user->phone }}</td>
                                             <td>{{ $user->role }}</td>
-                                            @if($user->is_verified)
-                                            <td>Verified</td>
-                                            @else
-                                            <td>Unverified</td>
-                                            @endif
+                                            <td>{{$user->email}}</td>
                                             <td>{{ $user->created_at }}</td>
                                             <td>
-                                                <a href="{{ route('user.details', ['id' => $user->id]) }}" class="btn btn-secondary">
+                                                <a href="{{ route('edit.farm', ['id' => $user->id]) }}" class="btn btn-secondary">
                                                     <i class="fas fa-eye"></i> View User Details
                                                 </a> &nbsp;&nbsp;
-                                                <a href="{{ route('delete.user', ['id' => $user->id]) }}" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this user?')">
+                                                <a href="{{ route('edit.farm', ['id' => $user->id]) }}" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this user?')">
                                                     <i class="fas fa-trash-alt"></i> Delete User
                                                 </a>
 
@@ -113,7 +109,7 @@
                                         <th>Name</th>
                                         <th>Phone</th>
                                         <th>Role</th>
-                                        <th>Status</th>
+                                        <th>Email</th>
                                         <th>Date Joined</th>
                                         <th>Actions</th>
                                     </tr>
