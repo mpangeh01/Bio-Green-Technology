@@ -35,13 +35,12 @@ class UserController extends Controller
 
 
         // Update user details based on the form input
-        $user->name = $request->input('name');
+        $user->f_name = $request->input('f_name');
+        $user->l_name = $request->input('l_name');
+
         $user->email = $request->input('email');
         $user->phone = $request->input('phone');
         $user->role = $request->input('role');
-        if ($request->has('bio')) {
-            $user->bio = $request->input('bio');
-        }
 
         if ($request->hasFile('dp')) {
             // Retrieve the uploaded image
@@ -62,7 +61,7 @@ class UserController extends Controller
         return redirect()->back()->with('status', 'User Has Been Updated Successfully');
     }
 
-    public function getAddUserForm()
+    public function create()
     {
 
         // The method Name is self explanatory mate
@@ -74,20 +73,21 @@ class UserController extends Controller
     {
         // Validate the incoming request data
         $validatedData = $request->validate([
-            'name' => 'required|string',
+            'f_name' => 'required|string',
+            'l_name' => 'required|string',
             'email' => 'required|email|unique:users,email',
             'phone' => 'required|string',
-            'role' => 'required|string|in:Admin,Accountant,Dispatcher,driver',
-            'password' => 'required|string|min:8',
+            'role' => 'required|string|in:Admin,Farmer',
+            'password' => 'required|string|min:6',
         ]);
 
         // Create a new user using the validated data
         $user = User::create([
-            'name' => $validatedData['name'],
+            'f_name' => $validatedData['f_name'],
+            'l_name' => $validatedData['l_name'],
             'email' => $validatedData['email'],
             'phone' => $validatedData['phone'],
             'role' => $validatedData['role'],
-            'is_verified' => true,
             'password' => bcrypt($validatedData['password']), // Hash the password
         ]);
 

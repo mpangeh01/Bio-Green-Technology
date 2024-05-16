@@ -44,7 +44,15 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/update-pond/{id}', [App\Http\Controllers\PondController::class, 'update'])->name('update.pond');
     Route::get('/delete-pond/{id}', [App\Http\Controllers\PondController::class, 'destroy'])->name('delete.pond');
 
-    //POND MANAGEMNT
+    //USER MANAGEMNT
     Route::get('/all-users', [App\Http\Controllers\UserController::class, 'index'])->name('all.users');
+    Route::get('/view-user/{id}', [App\Http\Controllers\UserController::class, 'getUserDetails'])->name('user.details');
+    Route::post('/update-user/{id}', [App\Http\Controllers\UserController::class, 'update'])->name('update.user');
+    Route::get('/add-user', [App\Http\Controllers\UserController::class, 'create'])->name('add.user');
+    Route::post('/store-user', [App\Http\Controllers\UserController::class, 'store'])->name('store.user');
+    Route::get('/delete-user/{id}', [App\Http\Controllers\UserController::class, 'destroy'])->name('delete.user');
 
+    //VIDEO MANAGEMENT
+    Route::get('/add-video', [App\Http\Controllers\VideoController::class, 'create'])->name('add.video');
+    Route::post('/store-video', [App\Http\Controllers\VideoController::class, 'store'])->name('store.video');
 });

@@ -56,7 +56,7 @@
                     <div class="card-body">
                         <div class="table-responsive">
                             <div style="display: flex; justify-content: flex-end; margin-top: 10px;">
-                                <a href="#" class="btn btn-success">Add User</a>
+                                <a href="{{route('add.user')}}" class="btn btn-success">Add User</a>
                             </div>
 
 
@@ -87,10 +87,10 @@
                                             <td>{{$user->email}}</td>
                                             <td>{{ $user->created_at }}</td>
                                             <td>
-                                                <a href="{{ route('edit.farm', ['id' => $user->id]) }}" class="btn btn-secondary">
+                                                <a href="{{ route('user.details', ['id' => $user->id]) }}" class="btn btn-secondary">
                                                     <i class="fas fa-eye"></i> View User Details
                                                 </a> &nbsp;&nbsp;
-                                                <a href="{{ route('edit.farm', ['id' => $user->id]) }}" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this user?')">
+                                                <a href="{{ route('delete.user', ['id' => $user->id]) }}" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this user?')">
                                                     <i class="fas fa-trash-alt"></i> Delete User
                                                 </a>
 

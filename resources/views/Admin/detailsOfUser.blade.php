@@ -65,7 +65,7 @@
                                             <img src="Profile Images/{{ $pickedUser->picture }}" alt="Admin"
                                                 class="rounded-circle p-1 bg-primary" width="110">
                                             <div class="mt-3">
-                                                <h4>{{ $pickedUser->name }}</h4>
+                                                <h4>{{ $pickedUser->f_name }} {{ $pickedUser->l_name }}</h4>
                                                 <p class="text-secondary mb-1">{{ $pickedUser->role }}</p>
                                             </div>
                                         </div>
@@ -83,13 +83,24 @@
 
                                             <div class="row mb-3">
                                                 <div class="col-sm-3">
-                                                    <h6 class="mb-0">Full Name : </h6>
+                                                    <h6 class="mb-0">First Name : </h6>
                                                 </div>
                                                 <div class="col-sm-9 text-secondary">
-                                                    <input type="text" class="form-control" name="name"
-                                                        value="{{ $pickedUser->name }}" required />
+                                                    <input type="text" class="form-control" name="f_name"
+                                                        value="{{ $pickedUser->f_name }}" required />
                                                 </div>
                                             </div>
+
+                                            <div class="row mb-3">
+                                                <div class="col-sm-3">
+                                                    <h6 class="mb-0">Last Name : </h6>
+                                                </div>
+                                                <div class="col-sm-9 text-secondary">
+                                                    <input type="text" class="form-control" name="l_name"
+                                                        value="{{ $pickedUser->l_name }}" required />
+                                                </div>
+                                            </div>
+
                                             <div class="row mb-3">
                                                 <div class="col-sm-3">
                                                     <h6 class="mb-0">Email :</h6>
@@ -134,22 +145,13 @@
                                                 <div class="col-sm-9 text-secondary">
                                                     <select name="role" class="form-select form-select-sm mb-3" aria-label=".form-select-sm example" id="origin">
                                                         <option value="Admin" {{ $pickedUser->role === 'Admin' ? 'selected' : '' }}>Admin</option>
-                                                        <option value="Accountant" {{ $pickedUser->role === 'Accountant' ? 'selected' : '' }}>Accountant</option>
-                                                        <option value="Dispatcher" {{ $pickedUser->role === 'Dispatcher' ? 'selected' : '' }}>Dispatcher</option>
-                                                        <option value="driver" {{ $pickedUser->role === 'driver' ? 'selected' : '' }}>Driver</option>
+                                                        <option value="Farmer" {{ $pickedUser->role === 'Farmer' ? 'selected' : '' }}>Farmer</option>
+
                                                     </select>
                                                 </div>
                                             </div>
 
 
-                                            <div class="row mb-3">
-                                                <div class="col-sm-3">
-                                                    <h6 class="mb-0">Bio : </h6>
-                                                </div>
-                                                <div class="col-sm-9 text-secondary">
-                                                    <textarea name="bio" cols="30" rows="10" class="form-control" required>{{ $pickedUser->bio }}</textarea>
-                                                </div>
-                                            </div>
                                             <div class="row mb-3">
                                                 <div class="col-sm-3">
                                                     <h6 class="mb-0"></h6>

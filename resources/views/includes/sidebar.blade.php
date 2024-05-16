@@ -62,6 +62,20 @@
                 <div class="menu-title">Video Management</div>
             </a>
             <ul>
+                <li> <a href="{{route('add.video')}}"><i class="bx bx-right-arrow-alt"></i>Add Video</a>
+                </li>
+                <li> <a href="#"><i class="bx bx-right-arrow-alt"></i>View Videos</a>
+                </li>
+            </ul>
+        </li>
+
+        <li>
+            <a class="has-arrow" href="javascript:;">
+                <div class="parent-icon"><i class='bx bx-map-pin'></i>
+                </div>
+                <div class="menu-title">Febi Management</div>
+            </a>
+            <ul>
                 <li> <a href="#"><i class="bx bx-right-arrow-alt"></i>Add Video</a>
                 </li>
                 <li> <a href="#"><i class="bx bx-right-arrow-alt"></i>View Videos</a>

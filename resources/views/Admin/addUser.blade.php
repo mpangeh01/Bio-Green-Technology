@@ -62,15 +62,21 @@
 
                                             @csrf
                                             <div class="mb-3">
-                                                <label class="form-label">Name</label>
-                                                <input type="text" class="form-control" name="name"
-                                                    placeholder="John Doe" required>
+                                                <label class="form-label">First Name</label>
+                                                <input type="text" class="form-control" name="f_name"
+                                                    placeholder="Mufwaya" required>
+                                            </div>
+
+                                            <div class="mb-3">
+                                                <label class="form-label">Last Name</label>
+                                                <input type="text" class="form-control" name="l_name"
+                                                    placeholder="Mufwaya" required>
                                             </div>
 
                                             <div class="mb-3">
                                                 <label class="form-label">Email</label>
                                                 <input type="email" class="form-control" name="email"
-                                                    placeholder="johndoe2001@abaleya.app" required>
+                                                    placeholder="mwizanawakwi2001@biogreen.org" required>
                                             </div>
 
                                             <div class="mb-3">
@@ -84,9 +90,8 @@
                                                 <select name="role" class="form-select form-select-sm mb-3"
                                                     aria-label=".form-select-sm example" id="origin">
                                                     <option value="Admin">Admin</option>
-                                                    <option value="Accountant">Accountant</option>
-                                                    <option value="Dispatcher">Dispatcher</option>
-                                                    <option value="driver">Driver</option>
+                                                    <option value="Farmer">Farmer</option>
+
 
                                                 </select>
                                             </div>
