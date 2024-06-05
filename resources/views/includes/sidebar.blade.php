@@ -76,9 +76,9 @@
                 <div class="menu-title">Febi Management</div>
             </a>
             <ul>
-                <li> <a href="#"><i class="bx bx-right-arrow-alt"></i>Add Video</a>
+                <li> <a href="{{route('add.febi')}}"><i class="bx bx-right-arrow-alt"></i>Add Febi</a>
                 </li>
-                <li> <a href="#"><i class="bx bx-right-arrow-alt"></i>View Videos</a>
+                <li> <a href="#"><i class="bx bx-right-arrow-alt"></i>View Febis</a>
                 </li>
             </ul>
         </li>

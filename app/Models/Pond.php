@@ -13,4 +13,10 @@ class Pond extends Model
     {
         return $this->belongsTo(Farm::class);
     }
+
+    public function febi()
+    {
+        return $this->hasOne(Febi::class);
+    }
+
 }
