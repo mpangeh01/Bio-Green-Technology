@@ -13,15 +13,14 @@ return new class extends Migration
     {
         Schema::create('febis', function (Blueprint $table) {
             $table->id();
-            $table->string('identifier');
-            $table->float('temperature');
-            $table->float('humidity');
-            $table->float('turbidity');
-            $table->float('dissolved_oxygen');
-            $table->float('ph');
+            $table->string('identifier')->unique();
+            $table->float('temperature')->nullable();
+            $table->float('humidity')->nullable();
+            $table->float('turbidity')->nullable();
+            $table->float('dissolved_oxygen')->nullable();
+            $table->float('ph')->nullable();
             $table->unsignedBigInteger('pond_id');
             $table->timestamps();
-
             $table->foreign('pond_id')->references('id')->on('ponds')->onDelete('cascade');
         });
     }

@@ -58,6 +58,8 @@ Route::middleware(['auth'])->group(function () {
 
     //FEBI MANAGEMENT
     Route::get('/add-febi', [App\Http\Controllers\FebiController::class, 'create'])->name('add.febi');
+    Route::post('/store-febi', [App\Http\Controllers\FebiController::class, 'store'])->name('store.febi');
+    Route::get('/all-febis', [App\Http\Controllers\FebiController::class, 'index'])->name('all.febis');
 
 
 });

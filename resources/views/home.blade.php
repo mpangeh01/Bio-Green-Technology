@@ -33,7 +33,7 @@
                                 <div class="d-flex align-items-center">
                                     <div>
                                         <p class="mb-0 text-white">Total Users</p>
-                                        <h5 class="mb-0 text-white">867</h5>
+                                        <h5 class="mb-0 text-white">{{ $totalUsers }}</h5>
                                     </div>
                                     <div class="ms-auto text-white"><i class='bx bx-cart font-30'></i>
                                     </div>
@@ -50,7 +50,7 @@
                                 <div class="d-flex align-items-center">
                                     <div>
                                         <p class="mb-0 text-white">Total Farmers</p>
-                                        <h5 class="mb-0 text-white">945</h5>
+                                        <h5 class="mb-0 text-white">{{ $totalFarms }}</h5>
                                     </div>
                                     <div class="ms-auto text-white"><i class='bx bx-wallet font-30'></i>
                                     </div>
@@ -67,7 +67,7 @@
                                 <div class="d-flex align-items-center">
                                     <div>
                                         <p class="mb-0 text-white">Total Ponds</p>
-                                        <h5 class="mb-0 text-white">24.5K</h5>
+                                        <h5 class="mb-0 text-white">{{ $totalPonds }}</h5>
                                     </div>
                                     <div class="ms-auto text-white"><i class='bx bx-bulb font-30'></i>
                                     </div>
@@ -84,7 +84,7 @@
                                 <div class="d-flex align-items-center">
                                     <div>
                                         <p class="mb-0 text-white">Videos</p>
-                                        <h5 class="mb-0 text-white">869</h5>
+                                        <h5 class="mb-0 text-white">{{ $totalVideos }}</h5>
                                     </div>
                                     <div class="ms-auto text-white"><i class='bx bx-chat font-30'></i>
                                     </div>

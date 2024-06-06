@@ -78,7 +78,7 @@
             <ul>
                 <li> <a href="{{route('add.febi')}}"><i class="bx bx-right-arrow-alt"></i>Add Febi</a>
                 </li>
-                <li> <a href="#"><i class="bx bx-right-arrow-alt"></i>View Febis</a>
+                <li> <a href="{{ route('all.febis') }}"><i class="bx bx-right-arrow-alt"></i>View Febis</a>
                 </li>
             </ul>
         </li>

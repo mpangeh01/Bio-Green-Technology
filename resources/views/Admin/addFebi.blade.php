@@ -59,20 +59,31 @@
                             <div class="row">
                                 <div class="col-lg-8">
                                     <div class="border border-3 p-4 rounded">
-
-                                        <form action="{{ route('store.farm') }}" method="POST"
-                                            enctype="multipart/form-data">
-
+                                        <form action="{{ route('store.febi') }}" method="POST" enctype="multipart/form-data">
                                             @csrf
-
+                                            <div class="mb-3">
+                                                <label class="form-label">Identifier</label>
+                                                <input type="text" class="form-control" name="identifier" placeholder="Identifier" required>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="form-label">Pond</label>
+                                                <select name="pond_id" class="form-select form-select-sm mb-3" aria-label=".form-select-sm example" id="origin" required>
+                                                    @foreach ($ponds as $pond)
+                                                        <option value="{{ $pond->id }}">{{ $pond->name }}</option>
+                                                    @endforeach
+                                                </select>
+                                            </div>
+                                            <div class="mb-3">
+                                                <button type="submit" class="btn btn-outline-primary" style="width: 100%">Add Febi</button>
+                                            </div>
                                         </form>
                                     </div>
                                 </div>
-
                             </div><!--end row-->
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
         <!--end page wrapper -->
