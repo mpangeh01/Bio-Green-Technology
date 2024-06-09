@@ -15,6 +15,11 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('location');
+            $table->string('pondType')->nullable();
+            $table->float('length')->nullable();
+            $table->float('width')->nullable();
+            $table->float('depth')->nullable();
+            $table->date('date_constructed')->nullable();
             $table->unsignedBigInteger('farm_id');
             $table->timestamps();
 

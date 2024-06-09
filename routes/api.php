@@ -8,6 +8,8 @@ use App\Http\Controllers\API\ExpenseCategoryController;
 use App\Http\Controllers\API\IncomeCategoryController;
 use App\Http\Controllers\API\FishTypeController;
 use App\Http\Controllers\API\FeedTypeController;
+use App\Http\Controllers\API\PondController;
+use App\Http\Controllers\API\FishAdditionController;
 
 use App\Http\Controllers\API\RegisterController;
 
@@ -70,5 +72,21 @@ Route::middleware('auth:sanctum')->group(function () {
         Route::put('/{id}', [FeedTypeController::class, 'update']);
         Route::delete('/{id}', [FeedTypeController::class, 'destroy']);
     });
+
+    Route::prefix('ponds')->group(function () {
+        Route::get('/', [PondController::class, 'index']);
+        Route::post('/', [PondController::class, 'store']);
+        Route::get('/{id}', [PondController::class, 'show']);
+        Route::put('/{id}', [PondController::class, 'update']);
+        Route::delete('/{id}', [PondController::class, 'destroy']);
+    });
+
+    Route::prefix('fish-additions')->group(function () {
+        Route::get('/', [FishAdditionController::class, 'index']);
+        Route::post('/', [FishAdditionController::class, 'store']);
+        Route::put('/{id}', [FishAdditionController::class, 'update']);
+        Route::delete('/{id}', [FishAdditionController::class, 'destroy']);
+    });
+
 
 });

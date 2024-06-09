@@ -45,4 +45,9 @@ class Farm extends Model
     {
         return $this->hasMany(FishType::class);
     }
+
+    public function fishAdditions()
+    {
+        return $this->hasMany(FishAddition::class);
+    }
 }
