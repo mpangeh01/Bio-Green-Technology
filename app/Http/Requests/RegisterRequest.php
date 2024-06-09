@@ -22,12 +22,15 @@ class RegisterRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => ['required', 'string', 'max:255'],
+            'f_name' => ['required', 'string', 'max:255'],
+            'l_name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'farm' => ['required', 'string', 'max:255'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
-            'phone'=> ['required', 'string','max:15',],
-            'fcm_token' => 'required',
-
+            'phone' => ['required', 'string', 'max:15'],
+            'address' => ['required', 'string', 'max:255'],
+            'region' => ['required', 'string', 'max:255'],
         ];
     }
+
 }

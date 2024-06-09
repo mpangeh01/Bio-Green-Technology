@@ -2,17 +2,15 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\API\CarController;
 use App\Http\Controllers\API\UserController;
 use App\Http\Controllers\API\LoginController;
-use App\Http\Controllers\API\FactorController;
-use App\Http\Controllers\API\BookingController;
-use App\Http\Controllers\API\ListingController;
-use App\Http\Controllers\API\LocationController;
+use App\Http\Controllers\API\ExpenseCategoryController;
+use App\Http\Controllers\API\IncomeCategoryController;
+use App\Http\Controllers\API\FishTypeController;
+use App\Http\Controllers\API\FeedTypeController;
+
 use App\Http\Controllers\API\RegisterController;
-use App\Http\Controllers\API\NotificationController;
-use App\Http\Controllers\API\OtpController;
-use App\Http\Controllers\API\PaymentController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -32,15 +30,45 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::post('/register', [RegisterController::class, 'register']);
 Route::post('/login', [LoginController::class, 'login']);
 
-Route::post('password/reset', [UserController::class, 'sendResetLinkEmail']);
+//Route::post('password/reset', [UserController::class, 'sendResetLinkEmail']);
 
 
 Route::middleware('auth:sanctum')->group(function () {
 
 
-    
-    Route::post('/logout', [UserController::class, 'logout']);
 
+    //Route::post('/logout', [UserController::class, 'logout']);
 
+    // Expense Category Routes
+    Route::prefix('expense-categories')->group(function () {
+        Route::get('/', [ExpenseCategoryController::class, 'index']);
+        Route::post('/', [ExpenseCategoryController::class, 'store']);
+        Route::put('/{id}', [ExpenseCategoryController::class, 'update']);
+        Route::delete('/{id}', [ExpenseCategoryController::class, 'destroy']);
+    });
+
+    Route::prefix('income-categories')->group(function () {
+        Route::get('/', [IncomeCategoryController::class, 'index']);
+        Route::post('/', [IncomeCategoryController::class, 'store']);
+        Route::get('/{id}', [IncomeCategoryController::class, 'show']);
+        Route::put('/{id}', [IncomeCategoryController::class, 'update']);
+        Route::delete('/{id}', [IncomeCategoryController::class, 'destroy']);
+    });
+
+    Route::prefix('fish-types')->group(function () {
+        Route::get('/', [FishTypeController::class, 'index']);
+        Route::post('/', [FishTypeController::class, 'store']);
+        Route::get('/{id}', [FishTypeController::class, 'show']);
+        Route::put('/{id}', [FishTypeController::class, 'update']);
+        Route::delete('/{id}', [FishTypeController::class, 'destroy']);
+    });
+
+    Route::prefix('feed-types')->group(function () {
+        Route::get('/', [FeedTypeController::class, 'index']);
+        Route::post('/', [FeedTypeController::class, 'store']);
+        Route::get('/{id}', [FeedTypeController::class, 'show']);
+        Route::put('/{id}', [FeedTypeController::class, 'update']);
+        Route::delete('/{id}', [FeedTypeController::class, 'destroy']);
+    });
 
 });
