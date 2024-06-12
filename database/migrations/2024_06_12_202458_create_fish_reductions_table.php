@@ -11,19 +11,21 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('fish_additions', function (Blueprint $table) {
+        Schema::create('fish_reductions', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('pond_id');
             $table->unsignedBigInteger('fish_type_id');
-            $table->date('date_added');
+            $table->date('date_reduced');
             $table->integer('quantity');
             $table->decimal('cost_per_fish', 8, 2)->nullable();
             $table->decimal('total', 8, 2)->nullable();
             $table->decimal('weight', 8, 2)->nullable();
+            $table->unsignedBigInteger('farm_id');
             $table->timestamps();
 
             $table->foreign('pond_id')->references('id')->on('ponds')->onDelete('cascade');
             $table->foreign('fish_type_id')->references('id')->on('fish_types')->onDelete('cascade');
+
         });
     }
 
@@ -32,6 +34,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('fish_additions');
+        Schema::dropIfExists('fish_reductions');
     }
 };

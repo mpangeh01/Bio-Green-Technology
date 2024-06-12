@@ -30,5 +30,24 @@ class Pond extends Model
     {
         return $this->hasOne(Febi::class);
     }
+    public function fishAdditions()
+    {
+        return $this->hasMany(FishAddition::class);
+    }
 
+    public function fishReductions()
+    {
+        return $this->hasMany(FishReduction::class);
+    }
+
+    public function feedAdditions()
+    {
+        return $this->hasMany(FeedAddition::class);
+    }
+
+
+    public function feedReductions()
+    {
+        return $this->hasMany(FeedReduction::class);
+    }
 }

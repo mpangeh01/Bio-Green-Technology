@@ -10,6 +10,9 @@ use App\Http\Controllers\API\FishTypeController;
 use App\Http\Controllers\API\FeedTypeController;
 use App\Http\Controllers\API\PondController;
 use App\Http\Controllers\API\FishAdditionController;
+use App\Http\Controllers\API\FishReductionController;
+use App\Http\Controllers\API\FeedAdditionController;
+use App\Http\Controllers\API\FeedReductionController;
 
 use App\Http\Controllers\API\RegisterController;
 
@@ -88,5 +91,28 @@ Route::middleware('auth:sanctum')->group(function () {
         Route::delete('/{id}', [FishAdditionController::class, 'destroy']);
     });
 
+    // Fish Reduction Routes
+    Route::prefix('fish-reductions')->group(function () {
+        Route::get('/', [FishReductionController::class, 'index']);
+        Route::post('/', [FishReductionController::class, 'store']);
+        Route::put('/{id}', [FishReductionController::class, 'update']);
+        Route::delete('/{id}', [FishReductionController::class, 'destroy']);
+    });
+
+    Route::prefix('feed-additions')->group(function () {
+        Route::get('/', [FeedAdditionController::class, 'index']);
+        Route::post('/', [FeedAdditionController::class, 'store']);
+        Route::put('/{id}', [FeedAdditionController::class, 'update']);
+        Route::delete('/{id}', [FeedAdditionController::class, 'destroy']);
+    });
+
+    // Feed Reduction Routes
+    Route::prefix('feed-reductions')->group(function () {
+        Route::get('/', [FeedReductionController::class, 'index']);
+        Route::post('/', [FeedReductionController::class, 'store']);
+        Route::get('/{id}', [FeedReductionController::class, 'show']);
+        Route::put('/{id}', [FeedReductionController::class, 'update']);
+        Route::delete('/{id}', [FeedReductionController::class, 'destroy']);
+    });
 
 });
