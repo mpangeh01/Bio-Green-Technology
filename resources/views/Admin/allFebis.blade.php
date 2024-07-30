@@ -62,7 +62,6 @@
                                         <td>{{ $febi->dissolved_oxygen }}</td>
                                         <td>{{ $febi->ph }}</td>
                                         <td>{{ $febi->pond->name }}</td>
-
                                     </tr>
                                     @php $count++; @endphp
                                     @endforeach
@@ -83,11 +82,15 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
+
         <div class="overlay toggle-icon"></div>
         <a href="javaScript:;" class="back-to-top"><i class='bx bxs-up-arrow-alt'></i></a>
     </div>
+    <script>
+        $(document).ready(function() {
+            $('#febis-table').DataTable();
+        });
+        </script>
     @include('includes.footer')
     @include('includes.js')
 </body>

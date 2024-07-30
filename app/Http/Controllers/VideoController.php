@@ -8,6 +8,14 @@ use App\Models\Video;
 
 class VideoController extends Controller
 {
+
+    public function index()
+    {
+        $user = Auth::user();
+        $videos = Video::all(); // Fetch all videos from the database
+        return view("Admin.videos", compact("user", "videos")); // Pass the videos to the view
+    }
+
     //
     public function create(){
         $user = Auth::user();
@@ -24,7 +32,7 @@ class VideoController extends Controller
         ]);
 
         // Store the uploaded video file
-        $videoPath = $request->file('video')->store('videos', 'public');
+        $videoPath = $request->file('video')->store('Videos', 'public');
 
         // Save the video details to the database
         $video = new Video();
@@ -35,6 +43,8 @@ class VideoController extends Controller
         // Return a response or redirect
         return redirect()->back()->with('status', 'Video uploaded successfully!');
     }
+
+
 
 
 }

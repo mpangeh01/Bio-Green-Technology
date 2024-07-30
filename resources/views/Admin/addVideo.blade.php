@@ -81,7 +81,7 @@
 
                                             <div class="mb-3">
                                                 <button type="submit" class="btn btn-outline-primary"
-                                                    style="width: 100%">Add Farm</button>
+                                                    style="width: 100%">Add Video</button>
                                             </div>
                                         </form>
                                     </div>

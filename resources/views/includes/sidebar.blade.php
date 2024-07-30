@@ -64,7 +64,7 @@
             <ul>
                 <li> <a href="{{route('add.video')}}"><i class="bx bx-right-arrow-alt"></i>Add Video</a>
                 </li>
-                <li> <a href="#"><i class="bx bx-right-arrow-alt"></i>View Videos</a>
+                <li> <a href="{{ route('videos') }}"><i class="bx bx-right-arrow-alt"></i>View Videos</a>
                 </li>
             </ul>
         </li>

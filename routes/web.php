@@ -55,6 +55,7 @@ Route::middleware(['auth'])->group(function () {
     //VIDEO MANAGEMENT
     Route::get('/add-video', [App\Http\Controllers\VideoController::class, 'create'])->name('add.video');
     Route::post('/store-video', [App\Http\Controllers\VideoController::class, 'store'])->name('store.video');
+    Route::get('/videos', [App\Http\Controllers\VideoController::class, 'index'])->name('videos');
 
     //FEBI MANAGEMENT
     Route::get('/add-febi', [App\Http\Controllers\FebiController::class, 'create'])->name('add.febi');
