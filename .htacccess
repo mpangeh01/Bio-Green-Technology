@@ -1,6 +1,17 @@
-RewriteEngine On
-RewriteBase /
+<IfModule mod_rewrite.c>
+    Options +FollowSymLinks
+    RewriteEngine On
 
-# Serve files from the root directory
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule ^(.*)$ public/$1 [L]
+    # Redirect requests to the /public directory if not already there
+    RewriteCond %{REQUEST_URI} !^/public/
+
+    # Check if the requested file or directory exists
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+
+    # Redirect all other requests to /public
+    RewriteRule ^(.*)$ /public/$1 [L,QSA]
+
+    # Ensure the root URL directs to /public/index.php
+    RewriteRule ^(/)?$ public/index.php [L]
+</IfModule>
